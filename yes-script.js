@@ -8,7 +8,7 @@ window.addEventListener('load', () => {
     music.volume = 0.3
     music.play().catch(() => {})
     musicPlaying = true
-    document.getElementById('music-toggle').textContent = '🔊' // Վերևի կոճակը կդառնա "🔊"
+    document.getElementById('music-toggle').textContent = '🔊'
 })
 
 function launchConfetti() {
