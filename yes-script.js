@@ -3,7 +3,7 @@ let musicPlaying = false
 window.addEventListener('load', () => {
     launchConfetti()
 
-    // Երաժշտության ավտոմատ խաղալու սկսելը (աշխատում է, քանի որ օգտատերը սեղմել է Այո, որ հասնի այստեղ)
+   // Autoplay music (works since user clicked Yes to get here)
     const music = document.getElementById('bg-music')
     music.volume = 0.3
     music.play().catch(() => {})
@@ -16,7 +16,7 @@ function launchConfetti() {
     const duration = 6000
     const end = Date.now() + duration
 
-    // Նախնական մեծ պայթյուն
+    // Initial big burst
     confetti({
         particleCount: 150,
         spread: 100,
@@ -24,7 +24,7 @@ function launchConfetti() {
         colors
     })
 
-    // Շարունակական կողային կրակոցներ
+     // Continuous side cannons
     const interval = setInterval(() => {
         if (Date.now() > end) {
             clearInterval(interval)
@@ -54,10 +54,10 @@ function toggleMusic() {
     if (musicPlaying) {
         music.pause()
         musicPlaying = false
-        document.getElementById('music-toggle').textContent = '🔇' // Երաժշտությունը փակելու նշանը
+        document.getElementById('music-toggle').textContent = '🔇' 
     } else {
         music.play()
         musicPlaying = true
-        document.getElementById('music-toggle').textContent = '🔊' // Երաժշտությունը բացելու նշանը
+        document.getElementById('music-toggle').textContent = '🔊' 
     }
 }
